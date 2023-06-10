@@ -6,8 +6,6 @@ async function main (password) {
   // 读取 keystore
   const ks = fs.readFileSync("key.json")
   const signer  = await ethers.Wallet.fromEncryptedJson(ks, password)
-  // 利用Infura的rpc节点连接以太坊网络
-  // 填入Infura API Key, 教程：https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Tools/TOOL02_Infura/readme.md
   // 连接以太坊主网（此处使用 imtoken 的 rpc）
   const providerETH = new ethers.providers.JsonRpcProvider(`https://eth-mainnet.token.im`)
   const abi = JSON.parse(fs.readFileSync('abi.json'))
